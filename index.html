@@ -9,10 +9,16 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
+        }
+        .category {
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            color: #2c3e50;
         }
         .download-item {
             background: #f9f9f9;
@@ -27,85 +33,183 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 3px;
+            background-color: #f0f7ff;
         }
         .download-link:hover {
-            text-decoration: underline;
+            background-color: #e0efff;
         }
         .file-info {
             font-size: 14px;
             color: #666;
         }
         footer {
-            margin-top: 30px;
+            margin-top: 40px;
             text-align: center;
             color: #666;
             font-size: 14px;
+            padding: 20px;
+            border-top: 1px solid #eee;
         }
-        /* 新增标题图标样式 */
         .title-icon {
             color: #3498db;
             margin-right: 10px;
         }
+        .recommended {
+            color: orange;
+            font-weight: bold;
+        }
+        .note {
+            color: red;
+            font-size: 13px;
+        }
     </style>
 </head>
 <body>
-    <!-- 修改后的标题，添加了下载图标 -->
     <h1><i class="fas fa-cloud-download-alt title-icon"></i>XelerDL 文件下载站</h1>
     
+    <h2 class="category"><i class="fas fa-globe"></i> 浏览器</h2>
     <div class="download-item">
-        <h3>Google Chrome</h3>
-        <p>快速、安全且免费的网络浏览器 <span style="color: red;">（无法下载可以尝试开VPN）</span><span style="color: orange;">（推荐）</span></p>
+        <h3>Google Chrome <span class="recommended">(推荐)</span></h3>
+        <p>快速、安全且免费的网络浏览器 <span class="note">（无法下载可以尝试开VPN）</span></p>
         <div class="file-info">
-            大小: 85.5 MB | 更新: 2025-06-05
+            大小: 85.5 MB | 版本: 最新稳定版 | 更新: 2025-06-05
         </div>
-        <a href="https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B806F36C0-C5CE-08A2-84EB-9B6AF1F3EE9A%7D%26lang%3Dzh-CN%26browser%3D4%26usagestats%3D1%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable-statsdef_1%26brand%3DGCEA/dl/chrome/install/GoogleChromeStandaloneEnterprise64.msi" 
+        <a href="https://dl.google.com/chrome/install/ChromeSetup.exe" 
            class="download-link"
            download="ChromeSetup.exe">
-           下载
+           <i class="fas fa-download"></i> 官方下载
         </a>
     </div>
     
     <div class="download-item">
-        <h3>SteamSetup</h3>
-        <p>是畅玩游戏、讨论游戏、创造游戏的快乐所在。</p>
+        <h3>Microsoft Edge</h3>
+        <p>基于Chromium的新版Edge浏览器</p>
         <div class="file-info">
-            大小: 2.27 MB | 更新: 2024-06-05
+            大小: 1.5 MB | 版本: 自动更新版 | 更新: 2025-06-05
         </div>
-        <a href="https://media.st.dl.eccdnx.com/client/installer/SteamSetup.exe" 
+        <a href="https://go.microsoft.com/fwlink/?linkid=2108834" 
            class="download-link"
-           download="SteamSetup.exe">
-           下载
+           download="EdgeSetup.exe">
+           <i class="fas fa-download"></i> 下载
+        </a>
+    </div>
+    
+    <h2 class="category"><i class="fas fa-comments"></i> 通讯社交</h2>
+    <div class="download-item">
+        <h3>微信 Windows 版</h3>
+        <p>微信，是一种生活方式</p>
+        <div class="file-info">
+            大小: 191 MB | 版本: 3.9.5 | 更新: 2025-06-05
+        </div>
+        <a href="https://dldir1v6.qq.com/weixin/Windows/WeChatSetup.exe"
+           class="download-link"
+           download="WeChatSetup.exe">
+           <i class="fas fa-download"></i> 下载
         </a>
     </div>
     
     <div class="download-item">
-        <h3>腾讯QQ - 轻松做自己</h3>
-        <p>2025年5月27日 · 腾讯QQ，全新版本QQ9上线了！ QQ9，不仅是轻松聊天，更是兴趣社区的聚集地。欢迎下载体验最新版本QQ，体验最新功能！</p>
+        <h3>腾讯QQ</h3>
+        <p>全新版本QQ9上线了！轻松聊天，兴趣社区</p>
         <div class="file-info">
-            大小: 168 MB | 更新: 2025-06-05
+            大小: 168 MB | 版本: 9.9.19 | 更新: 2025-06-05
         </div>
         <a href="https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.19_250523_x64_01.exe"
            class="download-link"
            download="QQ_9.9.19.exe">
-           下载
+           <i class="fas fa-download"></i> 下载
         </a>
     </div>
     
+    <h2 class="category"><i class="fas fa-briefcase"></i> 办公学习</h2>
     <div class="download-item">
-        <h3>微信 Windows 版</h3>
-        <p>微信,是一种生活方式。</p>
+        <h3>WPS Office <span class="recommended">(推荐)</span></h3>
+        <p>国产办公套件，兼容微软Office格式</p>
         <div class="file-info">
-            大小: 191 MB | 更新: 2025-06-05
+            大小: 210 MB | 版本: 2023专业版 | 更新: 2025-05-20
         </div>
-        <a href="https://dldir1v6.qq.com/weixin/Universal/Windows/WeChatWin.exe"
+        <a href="https://wps-community-production.oss-cn-shanghai.aliyuncs.com/wps/download/ep/WPS2019Pro_11.8.2.12195.exe"
            class="download-link"
-           download="WeChatWin.exe">
-           下载
+           download="WPSOffice.exe">
+           <i class="fas fa-download"></i> 下载
+        </a>
+    </div>
+    
+    <h2 class="category"><i class="fas fa-music"></i> 影音娱乐</h2>
+    <div class="download-item">
+        <h3>网易云音乐</h3>
+        <p>发现和分享音乐的平台</p>
+        <div class="file-info">
+            大小: 85 MB | 版本: 2.10.5 | 更新: 2025-05-15
+        </div>
+        <a href="https://d1.music.126.net/dmusic/netease-cloud-music_2.10.5_amd64_ubuntu_20240523185721.deb"
+           class="download-link"
+           download="CloudMusic.exe">
+           <i class="fas fa-download"></i> 下载
+        </a>
+    </div>
+    
+    <h2 class="category"><i class="fas fa-shield-alt"></i> 安全防护</h2>
+    <div class="download-item">
+        <h3>火绒安全</h3>
+        <p>轻量级安全软件，无弹窗广告</p>
+        <div class="file-info">
+            大小: 23 MB | 版本: 5.0 | 更新: 2025-04-10
+        </div>
+        <a href="https://down5.huorong.cn/sysdiag-full-5.0.75.1-2024.04.10.1.exe"
+           class="download-link"
+           download="Huorong.exe">
+           <i class="fas fa-download"></i> 下载
+        </a>
+    </div>
+    
+    <h2 class="category"><i class="fas fa-download"></i> 下载工具</h2>
+    <div class="download-item">
+        <h3>迅雷</h3>
+        <p>老牌下载工具，支持P2P加速</p>
+        <div class="file-info">
+            大小: 85 MB | 版本: 11.3 | 更新: 2025-03-28
+        </div>
+        <a href="https://down.sandai.net/thunder11/XunLeiSetup11.3.12.1912.exe"
+           class="download-link"
+           download="Thunder.exe">
+           <i class="fas fa-download"></i> 下载
+        </a>
+    </div>
+    
+    <h2 class="category"><i class="fas fa-gamepad"></i> 游戏平台</h2>
+    <div class="download-item">
+        <h3>Steam</h3>
+        <p>畅玩游戏、讨论游戏、创造游戏的快乐所在</p>
+        <div class="file-info">
+            大小: 2.27 MB | 版本: 最新版 | 更新: 2024-06-05
+        </div>
+        <a href="https://media.st.dl.eccdnx.com/client/installer/SteamSetup.exe" 
+           class="download-link"
+           download="SteamSetup.exe">
+           <i class="fas fa-download"></i> 下载
+        </a>
+    </div>
+    
+    <h2 class="category"><i class="fas fa-cloud"></i> 云存储</h2>
+    <div class="download-item">
+        <h3>百度网盘</h3>
+        <p>提供文件的网络备份、同步和分享服务</p>
+        <div class="file-info">
+            大小: 65 MB | 版本: 7.29 | 更新: 2025-05-12
+        </div>
+        <a href="https://issuecdn.baidupcs.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.29.0.9.exe"
+           class="download-link"
+           download="BaiduNetdisk.exe">
+           <i class="fas fa-download"></i> 下载
         </a>
     </div>
     
     <footer>
-        <p>&copy; 2025 XelerDL资源下载站 | 联系我们: muyuyv2@outlook.com</p>
+        <p><i class="fas fa-envelope"></i> 联系我们: muyuyv2@outlook.com</p>
+        <p>&copy; 2025 XelerDL资源下载站 | 所有软件均来自官方渠道</p>
     </footer>
 </body>
 </html>
