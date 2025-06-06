@@ -14,6 +14,29 @@
             padding: 20px;
             line-height: 1.6;
         }
+        .search-container {
+            margin: 20px 0 30px;
+            display: flex;
+        }
+        .search-box {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #3498db;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        .search-button {
+            padding: 0 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .search-button:hover {
+            background-color: #2980b9;
+        }
         .category {
             margin-top: 30px;
             padding-bottom: 10px;
@@ -64,13 +87,27 @@
             color: red;
             font-size: 13px;
         }
+        .no-results {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 18px;
+            display: none;
+        }
     </style>
 </head>
 <body>
     <h1><i class="fas fa-cloud-download-alt title-icon"></i>XelerDL 文件下载站</h1>
     
+    <!-- 新增搜索框 -->
+    <div class="search-container">
+        <input type="text" class="search-box" id="searchInput" placeholder="搜索软件名称..." aria-label="搜索软件">
+        <button class="search-button" id="searchButton"><i class="fas fa-search"></i> 搜索</button>
+    </div>
+    <div class="no-results" id="noResults">没有找到匹配的软件</div>
+    
     <h2 class="category"><i class="fas fa-globe"></i> 浏览器</h2>
-    <div class="download-item">
+    <div class="download-item" data-search="google chrome 谷歌浏览器">
         <h3>Google Chrome <span class="recommended">(推荐)</span></h3>
         <p>快速、安全且免费的网络浏览器 <span class="note">（无法下载可以尝试开VPN）</span></p>
         <div class="file-info">
@@ -83,7 +120,7 @@
         </a>
     </div>
     
-    <div class="download-item">
+    <div class="download-item" data-search="microsoft edge 微软浏览器">
         <h3>Microsoft Edge</h3>
         <p>基于Chromium的新版Edge浏览器</p>
         <div class="file-info">
@@ -92,12 +129,12 @@
         <a href="https://go.microsoft.com/fwlink/?linkid=2108834" 
            class="download-link"
            download="EdgeSetup.exe">
-           <i class="fas fa-download"></i> 下载
+           <i class="fas fa-download"></i> 官方下载
         </a>
     </div>
     
     <h2 class="category"><i class="fas fa-comments"></i> 通讯社交</h2>
-    <div class="download-item">
+    <div class="download-item" data-search="微信 wechat">
         <h3>微信 Windows 版</h3>
         <p>微信，是一种生活方式</p>
         <div class="file-info">
@@ -106,11 +143,11 @@
         <a href="https://dldir1v6.qq.com/weixin/Windows/WeChatSetup.exe"
            class="download-link"
            download="WeChatSetup.exe">
-           <i class="fas fa-download"></i> 下载
+           <i class="fas fa-download"></i> 官方下载
         </a>
     </div>
     
-    <div class="download-item">
+    <div class="download-item" data-search="qq 腾讯qq">
         <h3>腾讯QQ</h3>
         <p>全新版本QQ9上线了！轻松聊天，兴趣社区</p>
         <div class="file-info">
@@ -119,12 +156,12 @@
         <a href="https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.19_250523_x64_01.exe"
            class="download-link"
            download="QQ_9.9.19.exe">
-           <i class="fas fa-download"></i> 下载
+           <i class="fas fa-download"></i> 官方下载
         </a>
     </div>
     
     <h2 class="category"><i class="fas fa-briefcase"></i> 办公学习</h2>
-    <div class="download-item">
+    <div class="download-item" data-search="wps office 金山办公">
         <h3>WPS Office <span class="recommended">(推荐)</span></h3>
         <p>国产办公套件，兼容微软Office格式</p>
         <div class="file-info">
@@ -133,12 +170,12 @@
         <a href="https://wps-community-production.oss-cn-shanghai.aliyuncs.com/wps/download/ep/WPS2019Pro_11.8.2.12195.exe"
            class="download-link"
            download="WPSOffice.exe">
-           <i class="fas fa-download"></i> 下载
+           <i class="fas fa-download"></i> 官方下载
         </a>
     </div>
     
     <h2 class="category"><i class="fas fa-music"></i> 影音娱乐</h2>
-    <div class="download-item">
+    <div class="download-item" data-search="网易云音乐 netease cloud music">
         <h3>网易云音乐</h3>
         <p>发现和分享音乐的平台</p>
         <div class="file-info">
@@ -147,12 +184,12 @@
         <a href="https://d1.music.126.net/dmusic/netease-cloud-music_2.10.5_amd64_ubuntu_20240523185721.deb"
            class="download-link"
            download="CloudMusic.exe">
-           <i class="fas fa-download"></i> 下载
+           <i class="fas fa-download"></i> 官方下载
         </a>
     </div>
     
     <h2 class="category"><i class="fas fa-shield-alt"></i> 安全防护</h2>
-    <div class="download-item">
+    <div class="download-item" data-search="火绒安全 huorong">
         <h3>火绒安全</h3>
         <p>轻量级安全软件，无弹窗广告</p>
         <div class="file-info">
@@ -161,12 +198,12 @@
         <a href="https://down5.huorong.cn/sysdiag-full-5.0.75.1-2024.04.10.1.exe"
            class="download-link"
            download="Huorong.exe">
-           <i class="fas fa-download"></i> 下载
+           <i class="fas fa-download"></i> 官方下载
         </a>
     </div>
     
     <h2 class="category"><i class="fas fa-download"></i> 下载工具</h2>
-    <div class="download-item">
+    <div class="download-item" data-search="迅雷 xunlei thunder">
         <h3>迅雷</h3>
         <p>老牌下载工具，支持P2P加速</p>
         <div class="file-info">
@@ -175,12 +212,12 @@
         <a href="https://down.sandai.net/thunder11/XunLeiSetup11.3.12.1912.exe"
            class="download-link"
            download="Thunder.exe">
-           <i class="fas fa-download"></i> 下载
+           <i class="fas fa-download"></i> 官方下载
         </a>
     </div>
     
     <h2 class="category"><i class="fas fa-gamepad"></i> 游戏平台</h2>
-    <div class="download-item">
+    <div class="download-item" data-search="steam 游戏平台">
         <h3>Steam</h3>
         <p>畅玩游戏、讨论游戏、创造游戏的快乐所在</p>
         <div class="file-info">
@@ -189,12 +226,12 @@
         <a href="https://media.st.dl.eccdnx.com/client/installer/SteamSetup.exe" 
            class="download-link"
            download="SteamSetup.exe">
-           <i class="fas fa-download"></i> 下载
+           <i class="fas fa-download"></i> 官方下载
         </a>
     </div>
     
     <h2 class="category"><i class="fas fa-cloud"></i> 云存储</h2>
-    <div class="download-item">
+    <div class="download-item" data-search="百度网盘 baidu netdisk">
         <h3>百度网盘</h3>
         <p>提供文件的网络备份、同步和分享服务</p>
         <div class="file-info">
@@ -203,7 +240,7 @@
         <a href="https://issuecdn.baidupcs.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.29.0.9.exe"
            class="download-link"
            download="BaiduNetdisk.exe">
-           <i class="fas fa-download"></i> 下载
+           <i class="fas fa-download"></i> 官方下载
         </a>
     </div>
     
@@ -211,5 +248,42 @@
         <p><i class="fas fa-envelope"></i> 联系我们: muyuyv2@outlook.com</p>
         <p>&copy; 2025 XelerDL资源下载站 | 所有软件均来自官方渠道</p>
     </footer>
+
+    <script>
+        // 搜索功能实现
+        document.getElementById('searchButton').addEventListener('click', function() {
+            performSearch();
+        });
+        
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.download-item');
+            let hasResults = false;
+            
+            items.forEach(item => {
+                const searchData = item.getAttribute('data-search').toLowerCase();
+                if (searchData.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // 显示/隐藏"没有结果"提示
+            document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
+            
+            // 显示所有类别标题
+            document.querySelectorAll('.category').forEach(category => {
+                category.style.display = 'block';
+            });
+        }
+    </script>
 </body>
 </html>
