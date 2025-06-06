@@ -53,6 +53,7 @@
         .download-link {
             display: inline-block;
             margin-top: 10px;
+            margin-right: 10px; /* 为多个下载按钮添加间距 */
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
@@ -99,243 +100,86 @@
 <body>
     <h1><i class="fas fa-cloud-download-alt title-icon"></i>XelerDL 文件下载站</h1>
     
-    <!-- 新增搜索框 -->
+    <!-- 搜索框 -->
     <div class="search-container">
         <input type="text" class="search-box" id="searchInput" placeholder="搜索软件名称..." aria-label="搜索软件">
         <button class="search-button" id="searchButton"><i class="fas fa-search"></i> 搜索</button>
     </div>
     <div class="no-results" id="noResults">没有找到匹配的软件</div>
-    
-    <h2 class="category"><i class="fas fa-globe"></i> 浏览器</h2>
-    <div class="download-item" data-search="google chrome 谷歌浏览器">
-        <h3>Google Chrome <span class="recommended">(推荐)</span></h3>
-        <p>快速、安全且免费的网络浏览器 <span class="note">（无法下载可以尝试开VPN）</span></p>
+
+    <!-- 影音娱乐分类（整合手机版下载） -->
+    <h2 class="category"><i class="fas fa-tv"></i> 影音娱乐</h2>
+    <div class="download-item" data-search="哔哩哔哩 bilibili 视频 直播 安卓 apk 手机版">
+        <h3>哔哩哔哩 (B站)</h3>
+        <p>国内知名视频弹幕网站，涵盖动画、游戏、学习等内容</p>
         <div class="file-info">
-            大小: 85.5 MB | 版本: 最新稳定版 | 更新: 2025-06-05
+            大小: 98 MB（电脑版） | 版本: 7.38.0 | 更新: 2025-06-10
         </div>
-        <a href="https://dl.google.com/chrome/install/ChromeSetup.exe" 
-           class="download-link"
-           download="ChromeSetup.exe">
-           <i class="fas fa-download"></i> 官方下载
+        <a href="https://www.bilibili.com/blackboard/dl2.html" class="download-link" download="BilibiliSetup.exe">
+            <i class="fas fa-desktop"></i> 电脑版下载
         </a>
-    </div>
-    
-    <div class="download-item" data-search="microsoft edge 微软浏览器">
-        <h3>Microsoft Edge</h3>
-        <p>基于Chromium的新版Edge浏览器</p>
-        <div class="file-info">
-            大小: 1.5 MB | 版本: 自动更新版 | 更新: 2025-06-05
-        </div>
-        <a href="https://go.microsoft.com/fwlink/?linkid=2108834" 
-           class="download-link"
-           download="EdgeSetup.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <h2 class="category"><i class="fas fa-comments"></i> 通讯社交</h2>
-    <div class="download-item" data-search="微信 wechat">
-        <h3>微信 Windows 版</h3>
-        <p>微信，是一种生活方式</p>
-        <div class="file-info">
-            大小: 191 MB | 版本: 3.9.5 | 更新: 2025-06-05
-        </div>
-        <a href="https://dldir1v6.qq.com/weixin/Windows/WeChatSetup.exe"
-           class="download-link"
-           download="WeChatSetup.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <div class="download-item" data-search="qq 腾讯qq">
-        <h3>腾讯QQ</h3>
-        <p>全新版本QQ9上线了！轻松聊天，兴趣社区</p>
-        <div class="file-info">
-            大小: 168 MB | 版本: 9.9.19 | 更新: 2025-06-05
-        </div>
-        <a href="https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.19_250523_x64_01.exe"
-           class="download-link"
-           download="QQ_9.9.19.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <h2 class="category"><i class="fas fa-briefcase"></i> 办公学习</h2>
-    <div class="download-item" data-search="wps office 金山办公">
-        <h3>WPS Office <span class="recommended">(推荐)</span></h3>
-        <p>国产办公套件，兼容微软Office格式</p>
-        <div class="file-info">
-            大小: 210 MB | 版本: 2023专业版 | 更新: 2025-05-20
-        </div>
-        <a href="https://wps-community-production.oss-cn-shanghai.aliyuncs.com/wps/download/ep/WPS2019Pro_11.8.2.12195.exe"
-           class="download-link"
-           download="WPSOffice.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <div class="download-item" data-search="microsoft office word excel powerpoint">
-        <h3>Microsoft Office</h3>
-        <p>包含Word、Excel、PowerPoint等办公软件</p>
-        <div class="file-info">
-            大小: 2.5 GB | 版本: 2021 | 更新: 2025-05-15
-        </div>
-        <a href="https://www.microsoft.com/zh-cn/microsoft-365" 
-           class="download-link"
-           download="MicrosoftOffice.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <div class="download-item" data-search="google workspace docs sheets slides">
-        <h3>Google Workspace</h3>
-        <p>包含Docs、Sheets、Slides等在线办公工具</p>
-        <div class="file-info">
-            大小: 在线服务 | 版本: 最新版 | 更新: 持续更新
-        </div>
-        <a href="https://workspace.google.com/" 
-           class="download-link"
-           download="GoogleWorkspace.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <div class="download-item" data-search="notion 笔记 项目管理">
-        <h3>Notion</h3>
-        <p>笔记与项目管理工具</p>
-        <div class="file-info">
-            大小: 50.5 MB | 版本: 最新版 | 更新: 2025-05-25
-        </div>
-        <a href="https://www.notion.so/desktop" 
-           class="download-link"
-           download="Notion.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <div class="download-item" data-search="evernote onenote 笔记">
-        <h3>Evernote</h3>
-        <p>笔记记录工具</p>
-        <div class="file-info">
-            大小: 108 MB | 版本: 最新版 | 更新: 2025-05-20
-        </div>
-        <a href="https://www.evernote.com/download" 
-           class="download-link"
-           download="Evernote.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <h2 class="category"><i class="fas fa-music"></i> 影音娱乐</h2>
-    <div class="download-item" data-search="网易云音乐 netease cloud music">
-        <h3>网易云音乐</h3>
-        <p>发现和分享音乐的平台</p>
-        <div class="file-info">
-            大小: 85 MB | 版本: 2.10.5 | 更新: 2025-05-15
-        </div>
-        <a href="https://d1.music.126.net/dmusic/netease-cloud-music_2.10.5_amd64_ubuntu_20240523185721.deb"
-           class="download-link"
-           download="CloudMusic.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <div class="download-item" data-search="spotify 音乐 在线音乐">
-        <h3>Spotify</h3>
-        <p>在线音乐平台</p>
-        <div class="file-info">
-            大小: 60 MB | 版本: 最新版 | 更新: 2025-05-30
-        </div>
-        <a href="https://www.spotify.com/download/windows/" 
-           class="download-link"
-           download="Spotify.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <h2 class="category"><i class="fas fa-shield-alt"></i> 安全防护</h2>
-    <div class="download-item" data-search="火绒安全 huorong">
-        <h3>火绒安全</h3>
-        <p>轻量级安全软件，无弹窗广告</p>
-        <div class="file-info">
-            大小: 23 MB | 版本: 5.0 | 更新: 2025-04-10
-        </div>
-        <a href="https://down5.huorong.cn/sysdiag-full-5.0.75.1-2024.04.10.1.exe"
-           class="download-link"
-           download="Huorong.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <div class="download-item" data-search="360安全卫士 360 杀毒">
-        <h3>360安全卫士</h3>
-        <p>国内常用安全软件</p>
-        <div class="file-info">
-            大小: 58.6 MB | 版本: 13.1 | 更新: 2025-05-15
-        </div>
-        <a href="https://down.360safe.com/inst.exe"
-           class="download-link"
-           download="360Safe.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <div class="download-item" data-search="bitdefender 杀毒 安全">
-        <h3>Bitdefender</h3>
-        <p>国际知名杀毒软件</p>
-        <div class="file-info">
-            大小: 120 MB | 版本: 2025 | 更新: 2025-05-01
-        </div>
-        <a href="https://www.bitdefender.com/download/"
-           class="download-link"
-           download="Bitdefender.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <h2 class="category"><i class="fas fa-download"></i> 下载工具</h2>
-    <div class="download-item" data-search="迅雷 xunlei thunder">
-        <h3>迅雷</h3>
-        <p>老牌下载工具，支持P2P加速</p>
-        <div class="file-info">
-            大小: 85 MB | 版本: 11.3 | 更新: 2025-03-28
-        </div>
-        <a href="https://down.sandai.net/thunder11/XunLeiSetup11.3.12.1912.exe"
-           class="download-link"
-           download="Thunder.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <h2 class="category"><i class="fas fa-gamepad"></i> 游戏平台</h2>
-    <div class="download-item" data-search="steam 游戏平台">
-        <h3>Steam</h3>
-        <p>畅玩游戏、讨论游戏、创造游戏的快乐所在</p>
-        <div class="file-info">
-            大小: 2.27 MB | 版本: 最新版 | 更新: 2024-06-05
-        </div>
-        <a href="https://media.st.dl.eccdnx.com/client/installer/SteamSetup.exe" 
-           class="download-link"
-           download="SteamSetup.exe">
-           <i class="fas fa-download"></i> 官方下载
-        </a>
-    </div>
-    
-    <h2 class="category"><i class="fas fa-cloud"></i> 云存储</h2>
-    <div class="download-item" data-search="百度网盘 baidu netdisk">
-        <h3>百度网盘</h3>
-        <p>提供文件的网络备份、同步和分享服务</p>
-        <div class="file-info">
-            大小: 65 MB | 版本: 7.29 | 更新: 2025-05-12
-        </div>
-        <a href="https://issuecdn.baidupcs.com/issue/netdisk/yunguanjia/BaiduNetdisk_7.29.0.9.exe"
-           class="download-link"
-           download="BaiduNetdisk.exe">
-           <i class="fas fa-download"></i> 官方下载
+        <a href="https://app.bilibili.com/" class="download-link" download="Bilibili.apk">
+            <i class="fas fa-mobile-alt"></i> 手机版下载
         </a>
     </div>
 
-    <!-- 新增分类和软件 -->
+    <div class="download-item" data-search="优酷 youku 视频 电视剧 安卓 apk 手机版">
+        <h3>优酷视频</h3>
+        <p>提供海量电影、电视剧、综艺等内容</p>
+        <div class="file-info">
+            大小: 85 MB（电脑版） | 版本: 11.0.12 | 更新: 2025-06-08
+        </div>
+        <a href="https://pc.youku.com/" class="download-link" download="YoukuSetup.exe">
+            <i class="fas fa-desktop"></i> 电脑版下载
+        </a>
+        <a href="https://m.youku.com/" class="download-link" download="Youku.apk">
+            <i class="fas fa-mobile-alt"></i> 手机版下载
+        </a>
+    </div>
+
+    <div class="download-item" data-search="爱奇艺 iqiyi 综艺 电影 安卓 apk 手机版">
+        <h3>爱奇艺</h3>
+        <p>热门影视综内容平台，支持4K高清播放</p>
+        <div class="file-info">
+            大小: 102 MB（电脑版） | 版本: 14.8.0 | 更新: 2025-06-05
+        </div>
+        <a href="https://www.iqiyi.com/download.html" class="download-link" download="IqiyiSetup.exe">
+            <i class="fas fa-desktop"></i> 电脑版下载
+        </a>
+        <a href="https://app.iqiyi.com/" class="download-link" download="Iqiyi.apk">
+            <i class="fas fa-mobile-alt"></i> 手机版下载
+        </a>
+    </div>
+
+    <div class="download-item" data-search="小红书 xiaohongshu 短视频 社交 安卓 apk 手机版">
+        <h3>小红书</h3>
+        <p>生活方式分享平台，含短视频、图文内容</p>
+        <div class="file-info">
+            大小: 115 MB（电脑版） | 版本: 8.9.0 | 更新: 2025-06-12
+        </div>
+        <a href="https://www.xiaohongshu.com/download" class="download-link" download="XiaohongshuSetup.exe">
+            <i class="fas fa-desktop"></i> 电脑版下载
+        </a>
+        <a href="https://www.xiaohongshu.com/app" class="download-link" download="Xiaohongshu.apk">
+            <i class="fas fa-mobile-alt"></i> 手机版下载
+        </a>
+    </div>
+
+    <div class="download-item" data-search="西瓜视频 xigua 短视频 直播 安卓 apk 手机版">
+        <h3>西瓜视频</h3>
+        <p>字节跳动旗下短视频平台，支持原创内容创作</p>
+        <div class="file-info">
+            大小: 78 MB（电脑版） | 版本: 7.1.0 | 更新: 2025-06-09
+        </div>
+        <a href="https://www.ixigua.com/download" class="download-link" download="XiguaSetup.exe">
+            <i class="fas fa-desktop"></i> 电脑版下载
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.ss.android.article.video" class="download-link" download="Xigua.apk">
+            <i class="fas fa-mobile-alt"></i> 手机版下载
+        </a>
+    </div>
+
+    <!-- 系统工具分类 -->
     <h2 class="category"><i class="fas fa-cog"></i> 系统工具</h2>
     <div class="download-item" data-search="ccleaner 系统清理优化工具">
         <h3>CCleaner</h3>
@@ -373,7 +217,7 @@
            <i class="fas fa-download"></i> 官方下载
         </a>
     </div>
-    
+
     <div class="download-item" data-search="teamviewer 远程控制">
         <h3>TeamViewer</h3>
         <p>远程控制工具</p>
@@ -385,6 +229,20 @@
            download="TeamViewer.exe">
            <i class="fas fa-download"></i> 官方下载
         </a>
+    </div>
+
+    <div class="download-item" data-search="radmin 远程控制 lan radmin4 radmin lan号码 8888">
+        <h3>Radmin <span class="recommended">(推荐)</span></h3>
+        <p>专业远程控制软件，支持内网穿透</p>
+        <div class="file-info">
+            大小: 15.8 MB | 版本: 4.6.2 | 更新: 2025-06-06
+        </div>
+        <a href="https://www.radmin.com/download/" 
+           class="download-link"
+           download="Radmin.exe">
+           <i class="fas fa-download"></i> 官方下载
+        </a>
+        <p class="note">Radmin Lan号码: 8888-8888-8888-8888</p>
     </div>
 
     <h2 class="category"><i class="fas fa-code"></i> 开发工具</h2>
@@ -767,41 +625,38 @@
 
     <footer>
         <p><i class="fas fa-envelope"></i> 联系我们: muyuyv2@outlook.com</p>
-        <p><a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></p>
-        <p>&copy; 2025 XelerDL资源下载站 | 所有软件均来自官方渠道</p>
+        <p><a href="https://github.com/muyuyv233" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></p>
+        <p>&copy; 2025 XelerDL 文件下载站 | 仅供学习交流使用</p>
     </footer>
 
+    <!-- 搜索功能实现 -->
     <script>
-        // 搜索功能实现
-        document.getElementById('searchButton').addEventListener('click', function() {
-            performSearch();
-        });
-        
+        document.getElementById('searchButton').addEventListener('click', performSearch);
         document.getElementById('searchInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 performSearch();
             }
         });
-        
+
         function performSearch() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const items = document.querySelectorAll('.download-item');
+            const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+            const items = document.querySelectorAll('.download-item'); // 只需搜索主项
             let hasResults = false;
-            
+
             items.forEach(item => {
-                const searchData = item.getAttribute('data-search').toLowerCase();
-                if (searchData.includes(searchTerm)) {
+                const searchData = item.getAttribute('data-search') || '';
+                if (searchData.toLowerCase().includes(searchTerm)) {
                     item.style.display = 'block';
                     hasResults = true;
                 } else {
                     item.style.display = 'none';
                 }
             });
-            
+
             // 显示/隐藏"没有结果"提示
             document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
-            
-            // 显示所有类别标题
+
+            // 确保所有类别标题可见
             document.querySelectorAll('.category').forEach(category => {
                 category.style.display = 'block';
             });
